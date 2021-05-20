@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
+
+  <link rel="icon" href="./images/blog.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <title>Vulnerabilities Blog</title>
+  <!-- <link href="blog.css" rel="stylesheet"> -->
+  <link href="home-page.css" rel="stylesheet">
+  <link href="blog.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">IT Security Blog</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link" href="home-page.html">Home</a>
+          <a class="nav-link active" href="./Blog.html">Blog</a>
+          <a class="nav-link" href="./Contact-us.html">Contact Us</a>
+          <a class="nav-link" href="./AddArticle.html">Add Article</a>
+          <a class="nav-link" href="./Sign-Up.html">Sign Up</a>
+          <a class="nav-link" href="./Login.html">Sign in</a>
+          <a class="nav-link" href="./AboutUs.html">About Us</a>
+        </nav>
+      </div>
+    </header>
+
+
+    <h2>Articles:</h2>
+    <ol role="main" class="lead inner cover" id="listArticles" type="1">
+
+    </ol>
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p class="footers mt-5 mb-3 text-muted"> &copy; Mabena LI 2021</p>
+      </div>
+    </footer>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+
+    function populateList() {
+      var articles = JSON.parse(localStorage.getItem("articless")) || [];
+      alert("articles " + articles);
+      $("#listArticles").empty();
+      articles.forEach(function (newArticle) {
+        $("#listArticles").append("<li>" + "<b>" + newArticle.strHeading + "</b>" + "<br />" + newArticle.strContent + "</li>")
+      })
+    }
+    if (localStorage) {
+      $(document).ready(function () {
+        var storedArticles = JSON.parse(localStorage.getItem("articless"));
+        alert('Articles' + storedArticles);
+        populateList();
+      })
+    } else {
+      alert("Your browser doesn't support localStorage.");
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="../../assets/js/vendor/popper.min.js"></script>
+  <script src="../../dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

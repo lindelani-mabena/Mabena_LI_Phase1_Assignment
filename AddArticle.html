@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
+
+  <link rel="icon" href="./images/blog.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <title>Add Article</title>
+  <!-- <link href="blog.css" rel="stylesheet"> -->
+  <link href="home-page.css" rel="stylesheet">
+  <link href="blog.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">IT Security Blog</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link" href="home-page.html">Home</a>
+          <a class="nav-link" href="./Blog.html">Blog</a>
+          <a class="nav-link" href="./Contact-us.html">Contact Us</a>
+          <a class="nav-link active" href="./AddArticle.html">Add Article</a>
+          <a class="nav-link" href="./Sign-Up.html">Sign Up</a>
+          <a class="nav-link" href="./Login.html">Sign in</a>
+          <a class="nav-link" href="./AboutUs.html">About Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main" class="inner cover blog-definition">
+      <form class="lead form-addarticle">
+        <div class="mb-3">
+          <label for="txtHeading">Heading:</label>
+          <input type="text" class="form-control" id="txtHeading">
+
+        </div>
+        <div class="mb-3">
+          <label for="txtContent">Content:</label>
+          <textarea type="text" class="form-control" id="txtContent" rows="10"> </textarea>
+        </div>
+
+
+        <div class="checkbox mb-3">
+        </div>
+        <button class="w-100 btn btn-lg btn-dark" id="btnAddArticle" type="button">Add Article</button>
+        <div class="form-floating">
+
+      </form>
+    </main>
+
+
+    <div class="inner">
+      <p class="footers mt-5 mb-3 text-muted">&copy; Mabena LI 2021</p>
+    </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    if (localStorage) {
+      $(document).ready(function () {
+        $("#btnAddArticle").click(function () {
+          var strHeading = $("#txtHeading").val();
+          var strContent = $("#txtContent").val();
+
+          var newArticle = {
+            "strHeading": strHeading,
+            "strContent": strContent
+
+          }
+          addNewPost(newArticle);
+        });
+      });
+      function addNewPost(post) {
+
+        var posts = getPostsFromStorage();
+        alert('posts' + posts);
+
+        posts.push(post);
+
+        localStorage.setItem('articless', JSON.stringify(posts));
+        alert("pushed");
+      }
+
+      function getPostsFromStorage() {
+        var posts;
+
+        const postsLS = localStorage.getItem('articless');
+
+        if (localStorage.getItem('articless') === null) {
+          posts = [];
+        }
+        else {
+          posts = JSON.parse(postsLS);
+        }
+
+        return posts;
+      }
+    } else {
+      alert("Your browser does not support localStorage.");
+    }
+  </script>
+</body>
+
+</html>

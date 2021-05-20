@@ -1,0 +1,56 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+  font-weight: 700;
+  height: 100%;
+}
+footer
+{
+  text-justify: center;
+}
+.form-signin , .form-signup , .form-contact{
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox, .form-signup .checkbox {
+  font-weight: 400;
+}
+
+p a 
+{
+    color: black;
+}
+
+.footers
+{
+   font-weight: 0;
+}
+
+.form-signin .form-floating:focus-within, .form-signup .form-floating:focus-within {
+  z-index: 6;
+}
+
+.form-signin input[id="txtEmail"], .form-contact input[id="txtEmail"] ,.form-signup input[id="txtFirstName"],.form-contact input[id="txtFirstName"],
+.form-signup input[id="txtLastName"], .form-contact input[id="txtLastName"] ,.form-signup input,[id="txtPassword"], .form-contact input[id="txtConfirmPassword"] , .form-signup input[id="txtLastName"], .form-contact input[id="txtContactNumber"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[id="txtPassword"], .form-signup input[id="txtConfirmPassword"], .form-contact textarea[id="txtMessage"]
+ {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.visible{
+  content-visibility: hidden;
+}

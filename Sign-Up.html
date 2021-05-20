@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link href="blog.css" rel="stylesheet">
+  <title>Sign Up</title>
+</head>
+
+<body class="text-center">
+
+  <main class="form-signup">
+    <form>
+      <img class="mb-4" src="./images/blog.png" alt="" width="72" height="57">
+      <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="txtFirstName" placeholder="First Name">
+        <label for="txtFirstName">First Name</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="txtLastName" placeholder="Last Name">
+        <label for="txtLastName">Last Name</label>
+        <div class="form-floating">
+          <input type="email" class="form-control" id="txtEmail" placeholder="name@example.com">
+          <label for="txtEmail">Email address</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="txtPassword" placeholder="Password">
+          <label for="txtPassword">Password</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="txtConfirmPassword" placeholder="Confirm Password">
+          <label for="txtConfirmPassword">Confirm Password</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-dark" type="submit" onclick="signUp();"> Sign Up</button>
+        <div class="form-floating">
+          <p>Already have an account? Sign in <a href="Login.html">here</a></p>
+        </div>
+        <p class="zmt-5 mb-3 text-muted">&copy; Mabena LI 2021</p>
+    </form>
+  </main>
+  <script src="./blog.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
